@@ -29,8 +29,8 @@ namespace CORE{
     }
 
 
-    // °¡»óÇÔ¼ö¸¦ °ÅÄ¡Áö ¾Ê´Â ÀÇµµ·Î »ç¿ëÇÏ·Á ÇßÁö¸¸
-    // ÀÎ¶óÀÎÈ­°¡ µÇÁö ¾Ê´Â ÀÌ ÇÔ¼ö°¡ Áß°£¿¡ ³¢¾îµé¾î ¿ÀÈ÷·Á ¸í·É¾î(¾î¼Àºí¸®±âÁØ)°¡ ´õ ¸¹¾ÆÁø´Ù
+    // ê°€ìƒí•¨ìˆ˜ë¥¼ ê±°ì¹˜ì§€ ì•ŠëŠ” ì˜ë„ë¡œ ì‚¬ìš©í•˜ë ¤ í–ˆì§€ë§Œ
+    // ì¸ë¼ì¸í™”ê°€ ë˜ì§€ ì•ŠëŠ” ì´ í•¨ìˆ˜ê°€ ì¤‘ê°„ì— ë¼ì–´ë“¤ì–´ ì˜¤íˆë ¤ ëª…ë ¹ì–´(ì–´ì…ˆë¸”ë¦¬ê¸°ì¤€)ê°€ ë” ë§ì•„ì§„ë‹¤
     #if _DEF_USING_DEBUG_MEMORY_LEAK
     CORE_API void* CoreMemAlloc(size_t size, const char* _FileName, int _Line)
     {
@@ -71,8 +71,8 @@ namespace CORE{
 
         if(g_isLimitedVersion && g_bThisDLL_is_First)
         {
-            _MACRO_MESSAGEBOX__OK(_T("º£Å¸ ¹öÀüÀÔ´Ï´Ù..."),
-                _T("Memory Pool Version(%u.%04u)\n")
+            _MACRO_MESSAGEBOX__OK(_T("Beta Version..."),
+                _T("Memory Pool Version(%u.%u)\n")
                 _T("lastpenguin83@gmail.com")
                 , mFN_Query_MemoryPool_Version_Major(), mFN_Query_MemoryPool_Version_Minor()
             );
@@ -80,13 +80,13 @@ namespace CORE{
         else if(!g_isLimitedVersion && gc_isLimitedVersion__Default)
         {
         #ifdef _DEBUG
-            // µğ¹ö±× ¹öÀüÀº ºñ°ø°³ÀÌ±â ¶§¹®¿¡ Ã³¸®ÇÒ °ÍÀº ¾ø´Ù
+            // ë””ë²„ê·¸ ë²„ì „ì€ ë¹„ê³µê°œì´ê¸° ë•Œë¬¸ì— ì²˜ë¦¬í•  ê²ƒì€ ì—†ë‹¤
         #else
-            // TODO: »ç¿ëÀÚ ÆÄÀÏ º¯Á¶¹ß°ß, Ã³¸®
+            // TODO: ì‚¬ìš©ì íŒŒì¼ ë³€ì¡°ë°œê²¬, ì²˜ë¦¬
                 //----------------------------------------------------------------
-                // Â÷ÈÄ ¼öÁ¤
-                //      ÀÌ ·ÎÁ÷Àº À§, ¾È³» ¸Ş¼¼Áö¿Í ±ÙÁ¢ÇÏÁö ¾Ê¾Æ¾ß ÇÏ¸ç
-                //      µğ½º¾î¼Àºí¸®¸® ½ÇÇà°¡´É¼ºÀ» ºĞ¼®ÇÏ±â ¿©·Æ°Ô ÇØ¾ß ÇÑ´Ù
+                // ì°¨í›„ ìˆ˜ì •
+                //      ì´ ë¡œì§ì€ ìœ„, ì•ˆë‚´ ë©”ì„¸ì§€ì™€ ê·¼ì ‘í•˜ì§€ ì•Šì•„ì•¼ í•˜ë©°
+                //      ë””ìŠ¤ì–´ì…ˆë¸”ë¦¬ë¦¬ ì‹¤í–‰ê°€ëŠ¥ì„±ì„ ë¶„ì„í•˜ê¸° ì—¬ë µê²Œ í•´ì•¼ í•œë‹¤
         #endif
         }
     }
@@ -124,7 +124,7 @@ namespace CORE{
     {
         if(!pLog)
             return;
-        // ÄÄÆÄÀÏ ½Ã±â
+        // ì»´íŒŒì¼ ì‹œê¸°
         auto pT = mFN_Query_CompileTime();
         if(pT)
         {
@@ -138,19 +138,19 @@ namespace CORE{
                 , t.Minute
                 , t.Second);
         }
-        // ¸Ş¸ğ¸®Ç® ¹öÀü
+        // ë©”ëª¨ë¦¬í’€ ë²„ì „
         ::UTIL::TLogWriter_Control::sFN_WriteLog(pLog, FALSE, _T("\tMemory Pool Version(%u.%u)")
             , mFN_Query_MemoryPool_Version_Major(), mFN_Query_MemoryPool_Version_Minor());
-        // ½ÇÇà µğ·ºÅä¸®
+        // ì‹¤í–‰ ë””ë ‰í† ë¦¬
         ::UTIL::TLogWriter_Control::sFN_WriteLog(pLog, FALSE,
             _T("\tCurrent Directory\n")
             _T("\t\t%s"), m_szCurrentDirectory);
-        // DLL °æ·Î
+        // DLL ê²½ë¡œ
         if(m_pszCoreDLL_FileName)
             ::UTIL::TLogWriter_Control::sFN_WriteLog(pLog, FALSE,
                 _T("\tCore DLL File Path\n")
                 _T("\t\t%s"), m_szCoreDLL_FilePath);
-        // EXE ÆÄÀÏ °æ·Î
+        // EXE íŒŒì¼ ê²½ë¡œ
         if(m_pszExecute_FileName)
             ::UTIL::TLogWriter_Control::sFN_WriteLog(pLog, FALSE,
                 _T("\tExecute File Path\n")
