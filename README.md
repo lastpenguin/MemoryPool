@@ -20,9 +20,10 @@ Visual Studio 2015 C++
 * Core_x64.dll	Windows Vista 이상
 * ※ 문자 집합 : 유니코드
 
+* * *
 
-## 사용 방법
-### 사용 방법 1
+## 라이브러리 연결
+### 방법1
 **Project_C/Library Public Version/Core Library BETA 2.0** 을 사용
 
 초기화를 처리할 `cpp` 파일에서 다음 파일을 포함(`include`)
@@ -41,9 +42,12 @@ Visual Studio 2015 C++
 ```c++
 ./User/Core_include.h
 ```
-### 사용 방법 2
+### 방법2
 `Project_C/SourceCode/Engine` 라이브러리 `import` 또는 코드를 참고
 
+* * *
+
+## 인터페이스
 인터페이스는 다음 파일들을 참조
 * `Core_Interface.h`
 * `MemoryPool_Interface.h`
@@ -54,7 +58,9 @@ Visual Studio 2015 C++
 * `pLogSystem`: 중요한 오류등을 기록
 * `pLogDebug`: 일반 디버깅 정보
 
-## 사용법 :
+* * *
+
+## 코드내 사용 방법
 (다음의 방법들은 모두 혼용사용이 가능합니다) 
  
 #1) 메모리풀을 적용하려는 객체는 `CMemoryPoolResource`를 상속받습니다. 
@@ -94,7 +100,7 @@ _MACRO_ALLOC__FROM_MEMORYPOOL_GENERIC
 _MACRO_FREE__FROM_MEMORYPOOL_GENERIC 
 ```
 
-## 사용법(기타) : 
+#기타 : 
 `STL Container` 의 `Allocator` 교체 할 경우 다음을 사용 
 ```c++
 TAllocator 
