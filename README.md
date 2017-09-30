@@ -62,7 +62,7 @@ c++ / Windows xp~ / Visualstudio 2015~
 
 
 
-/   사용법 : 
+/   사용법 :
 /       (다음의 방법들은 모두 혼용사용이 가능합니다) 
 / 
 /       #1) 메모리풀을 적용하려는 객체는 CMemoryPoolResource를 상속받습니다. 
