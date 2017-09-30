@@ -1,0 +1,7 @@
+NumTestCount(1~)			: 1
+Random Object Size Min(4 ~)		: 128
+Random Object Size Max(~10485760)(10MB)	: 256
+Random Seed				: 0
+Memory Per Test(MB)			: 100
+Num Thread(1~32)			: 1
+Write/Read Test(Y/N)			: N

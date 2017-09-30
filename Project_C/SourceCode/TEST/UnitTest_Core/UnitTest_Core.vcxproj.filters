@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="미리 컴파일된 헤더">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Reference : ReadOnly">
+      <UniqueIdentifier>{0321e664-5f0e-45d1-8fa7-8bc6aa653733}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Reference : ReadOnly\Core">
+      <UniqueIdentifier>{eb8447ac-8baa-4cb3-974c-e76ee44bc41c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Reference : ReadOnly\Core\UTIL">
+      <UniqueIdentifier>{bbaaae7a-0657-41e7-9a74-c072d101048c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Reference : ReadOnly\Core\UTIL\MemoryPool">
+      <UniqueIdentifier>{7d91863c-9ae5-40c7-a600-6c8b9ad7709d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Reference : ReadOnly\Core\UTIL\MemoryPool\V2">
+      <UniqueIdentifier>{bf341c33-4a8e-4b54-a11d-adf9f39c6da5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>미리 컴파일된 헤더</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\UTIL\Macro.cpp">
+      <Filter>Source Reference : ReadOnly\Core\UTIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\UTIL\System_Information.cpp">
+      <Filter>Source Reference : ReadOnly\Core\UTIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\UTIL\MemoryPool_v2\MemoryPool_PrecalculateData_v2.cpp">
+      <Filter>Source Reference : ReadOnly\Core\UTIL\MemoryPool\V2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\UTIL\MemoryPool_v2\MemoryPool_v2.cpp">
+      <Filter>Source Reference : ReadOnly\Core\UTIL\MemoryPool\V2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\UTIL\MemoryPool_v2\MemoryPoolCore_v2.cpp">
+      <Filter>Source Reference : ReadOnly\Core\UTIL\MemoryPool\V2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\UTIL\MemoryPool_v2\VMEM_LIST.cpp">
+      <Filter>Source Reference : ReadOnly\Core\UTIL\MemoryPool\V2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\UTIL\MemoryPool.cpp">
+      <Filter>Source Reference : ReadOnly\Core\UTIL\MemoryPool</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\UTIL\MemoryPoolCore.cpp">
+      <Filter>Source Reference : ReadOnly\Core\UTIL\MemoryPool</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\UTIL\ObjectPool.cpp">
+      <Filter>Source Reference : ReadOnly\Core\UTIL\MemoryPool</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\Core.cpp">
+      <Filter>Source Reference : ReadOnly\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\CorePrivate.cpp">
+      <Filter>Source Reference : ReadOnly\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\dllmain.cpp">
+      <Filter>Source Reference : ReadOnly\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\BasisClass\LOCK\Lock.cpp">
+      <Filter>Source Reference : ReadOnly</Filter>
+    </ClCompile>
+    <ClCompile Include="unittest_MemoryCompare_BYTE.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>미리 컴파일된 헤더</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

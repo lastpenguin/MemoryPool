@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h" />
+    <ClInclude Include="DLL_Opener.h">
+      <Filter>TEMP</Filter>
+    </ClInclude>
+    <ClInclude Include="test_memorypool.h">
+      <Filter>TEST</Filter>
+    </ClInclude>
+    <ClInclude Include="test_memorypool_std_allocator.h">
+      <Filter>TEST</Filter>
+    </ClInclude>
+    <ClInclude Include="test_MiniDumpWrite.h">
+      <Filter>TEST</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="TEST">
+      <UniqueIdentifier>{fc21ca97-ed87-40c3-bdc5-fdca051a72ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TEMP">
+      <UniqueIdentifier>{ff6bdcda-6ee7-44d7-9929-478642a00595}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

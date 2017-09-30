@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="UTIL">
+      <UniqueIdentifier>{fe661f02-e9e0-4a75-8887-215e60e5b266}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="공용 코드">
+      <UniqueIdentifier>{de764e15-01a1-44ca-ad5b-d7304fefda6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UTIL\String Pool">
+      <UniqueIdentifier>{0987c2ac-5951-4092-9a82-00556ea73b22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UTIL\Mini Dump">
+      <UniqueIdentifier>{f51cdbb0-dab6-4671-9144-6ebecd44aaaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UTIL\LogWriter">
+      <UniqueIdentifier>{34cdbf35-4158-4fc9-9802-b7c58954da5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UTIL\Timer">
+      <UniqueIdentifier>{d6c49024-dbf9-4504-b348-fa6c5d4380bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Window">
+      <UniqueIdentifier>{4444667d-4304-45f3-9c0e-ab21445129da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX">
+      <UniqueIdentifier>{3b4b4e62-d89c-433d-9935-09fbc014f7d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pre Compile Header">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Pre Compile Header</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Pre Compile Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h" />
+    <ClInclude Include="UTIL\Macro_Engine.h">
+      <Filter>UTIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BasisClass\LOCK\Lock.h">
+      <Filter>공용 코드</Filter>
+    </ClInclude>
+    <ClInclude Include="UTIL\MiniDump.h">
+      <Filter>UTIL\Mini Dump</Filter>
+    </ClInclude>
+    <ClInclude Include="UTIL\StringPool.hpp">
+      <Filter>UTIL\String Pool</Filter>
+    </ClInclude>
+    <ClInclude Include="UTIL\StringPool.h">
+      <Filter>UTIL\String Pool</Filter>
+    </ClInclude>
+    <ClInclude Include="UTIL\LogWriter.h">
+      <Filter>UTIL\LogWriter</Filter>
+    </ClInclude>
+    <ClInclude Include="UTIL\SimpleTimer.h">
+      <Filter>UTIL\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="UTIL\Timer.h">
+      <Filter>UTIL\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="Window\Window_Manager.h">
+      <Filter>Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Window\Default_WinProc.h">
+      <Filter>Window</Filter>
+    </ClInclude>
+    <ClInclude Include="DX\DX_Device_Manager.h">
+      <Filter>DX</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Pre Compile Header</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="UTIL\Macro_Engine.cpp">
+      <Filter>UTIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BasisClass\LOCK\Lock.cpp">
+      <Filter>공용 코드</Filter>
+    </ClCompile>
+    <ClCompile Include="UTIL\MiniDump.cpp">
+      <Filter>UTIL\Mini Dump</Filter>
+    </ClCompile>
+    <ClCompile Include="UTIL\LogWriter.cpp">
+      <Filter>UTIL\LogWriter</Filter>
+    </ClCompile>
+    <ClCompile Include="UTIL\SimpleTimer.cpp">
+      <Filter>UTIL\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="UTIL\Timer.cpp">
+      <Filter>UTIL\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="Window\Window_Manager.cpp">
+      <Filter>Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Window\WinProc.cpp">
+      <Filter>Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Window\Default_WinProc.cpp">
+      <Filter>Window</Filter>
+    </ClCompile>
+    <ClCompile Include="DX\DX_Device_Manager.cpp">
+      <Filter>DX</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine_Init.cpp" />
+  </ItemGroup>
+</Project>

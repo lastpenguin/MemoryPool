@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Pre Compile Header">
+      <UniqueIdentifier>{70b9bff0-4134-4aef-881e-d8dc88da755c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UTIL">
+      <UniqueIdentifier>{9dcb5135-955e-4724-8381-c87a69ab993b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UTIL\Memory Pool">
+      <UniqueIdentifier>{1980fa73-4fd8-411c-b3ee-d1570b40d4b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="공용 코드">
+      <UniqueIdentifier>{17650948-9c07-4eca-a96e-bd318206fc16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UTIL\System Information">
+      <UniqueIdentifier>{f1069fbe-4914-41ff-ac4f-f770a4c2cbd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UTIL\LogWriter">
+      <UniqueIdentifier>{7d92fde4-6fb4-48f1-b821-ea584f4c9899}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UTIL\Memory Pool\V2">
+      <UniqueIdentifier>{8b971146-7dda-4acb-9ef7-5b191788d95c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UTIL\Memory Pool\V1">
+      <UniqueIdentifier>{a6507c71-178e-495f-98e8-b4c538b60327}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UTIL\Number">
+      <UniqueIdentifier>{42e5bbad-7cb9-4789-97f4-51c7383d2495}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Pre Compile Header</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Pre Compile Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Core.h" />
+    <ClInclude Include="CorePrivate.h" />
+    <ClInclude Include="UTIL\DebugMemory.h">
+      <Filter>UTIL</Filter>
+    </ClInclude>
+    <ClInclude Include="UTIL\Macro.h">
+      <Filter>UTIL</Filter>
+    </ClInclude>
+    <ClInclude Include="Core_Interface.h" />
+    <ClInclude Include="UTIL\MemoryPool_Interface.h">
+      <Filter>UTIL\Memory Pool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BasisClass\LOCK\Lock.h">
+      <Filter>공용 코드</Filter>
+    </ClInclude>
+    <ClInclude Include="UTIL\System_Information.h">
+      <Filter>UTIL\System Information</Filter>
+    </ClInclude>
+    <ClInclude Include="UTIL\System_Information_Interface.h">
+      <Filter>UTIL\System Information</Filter>
+    </ClInclude>
+    <ClInclude Include="UTIL\LogWriter_Interface.h">
+      <Filter>UTIL\LogWriter</Filter>
+    </ClInclude>
+    <ClInclude Include="UTIL\ObjectPool.h">
+      <Filter>UTIL\Memory Pool</Filter>
+    </ClInclude>
+    <ClInclude Include="UTIL\MemoryPool_v2\MemoryPool_v2.h">
+      <Filter>UTIL\Memory Pool\V2</Filter>
+    </ClInclude>
+    <ClInclude Include="UTIL\MemoryPool_v2\MemoryPoolCore_v2.h">
+      <Filter>UTIL\Memory Pool\V2</Filter>
+    </ClInclude>
+    <ClInclude Include="UTIL\MemoryPool.h">
+      <Filter>UTIL\Memory Pool\V1</Filter>
+    </ClInclude>
+    <ClInclude Include="UTIL\MemoryPoolCore.h">
+      <Filter>UTIL\Memory Pool\V1</Filter>
+    </ClInclude>
+    <ClInclude Include="UTIL\MemoryPool_v2\VMEM_LIST.h">
+      <Filter>UTIL\Memory Pool\V2</Filter>
+    </ClInclude>
+    <ClInclude Include="UTIL\Number.h">
+      <Filter>UTIL\Number</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Core.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Pre Compile Header</Filter>
+    </ClCompile>
+    <ClCompile Include="CorePrivate.cpp" />
+    <ClCompile Include="UTIL\Macro.cpp">
+      <Filter>UTIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BasisClass\LOCK\Lock.cpp">
+      <Filter>공용 코드</Filter>
+    </ClCompile>
+    <ClCompile Include="UTIL\System_Information.cpp">
+      <Filter>UTIL\System Information</Filter>
+    </ClCompile>
+    <ClCompile Include="UTIL\ObjectPool.cpp">
+      <Filter>UTIL\Memory Pool</Filter>
+    </ClCompile>
+    <ClCompile Include="UTIL\MemoryPool_v2\MemoryPool_v2.cpp">
+      <Filter>UTIL\Memory Pool\V2</Filter>
+    </ClCompile>
+    <ClCompile Include="UTIL\MemoryPool_v2\MemoryPoolCore_v2.cpp">
+      <Filter>UTIL\Memory Pool\V2</Filter>
+    </ClCompile>
+    <ClCompile Include="UTIL\MemoryPool.cpp">
+      <Filter>UTIL\Memory Pool\V1</Filter>
+    </ClCompile>
+    <ClCompile Include="UTIL\MemoryPoolCore.cpp">
+      <Filter>UTIL\Memory Pool\V1</Filter>
+    </ClCompile>
+    <ClCompile Include="UTIL\MemoryPool_v2\MemoryPool_PrecalculateData_v2.cpp">
+      <Filter>UTIL\Memory Pool\V2</Filter>
+    </ClCompile>
+    <ClCompile Include="UTIL\MemoryPool_v2\VMEM_LIST.cpp">
+      <Filter>UTIL\Memory Pool\V2</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

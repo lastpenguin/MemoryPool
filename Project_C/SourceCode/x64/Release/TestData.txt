@@ -1,0 +1,45 @@
+NumTestCount(1~)			: 1
+Random Object Size Min(4 ~)		: 32
+Random Object Size Max(~10485760)(10MB)	: 512
+Random Seed				: 0
+Memory Per Test(MB)			: 2048
+Num Thread(1~32)			: 4
+Write/Read Test(Y/N)			: y
+
+loop3
+16-128
+1024
+?
+y
+
+1077.726
+1078.370
+
+
+다중 스레드 테스트의 경우 alloc free 요청은 경쟁이 높다
+
+POOL vs TBB CPU FX8300 4M8C
+T1
+2.6320  vs 2.39
+T4
+0.9008 vs 1.1608
+T8
+0.6933 vs 0.9309
+T16
+1.8430 vs 0.7988
+
+1차캐시(Basket)의 수요 유동적 감소 버전
+이것은 메모리를 절약할 수 있다(약간)
+하지만 싱글 - 다중 스레드 모두 너무 많은 성능을 감소시킨다
+T1	3.1164
+T4	1.0621
+T8	0.8608
+T16	1.9252
+
+2.5730
+
+2차캐시 수요 증가
+T	N		Y
+1	2.6343		2.5700
+4	0.8098		0.8405
+8	0.5800		0.6035

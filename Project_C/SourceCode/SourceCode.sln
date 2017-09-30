@@ -1,0 +1,121 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "Core\Core.vcxproj", "{DB2B07D2-458F-480C-A6DA-459992F61CB8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TEST", "TEST", "{BB22E726-CB29-4B8E-9419-3E8BD3786633}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Engine", "Engine", "{CAF35193-5EC1-4E1C-9D6D-DD313B2F7867}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleTestProject", "TEST\ConsoleTestProject\ConsoleTestProject.vcxproj", "{297399B0-029D-40A7-B62F-664C1E2A3008}"
+	ProjectSection(ProjectDependencies) = postProject
+		{03E09A3B-CC08-4AE4-91A3-B6A8273A24B8} = {03E09A3B-CC08-4AE4-91A3-B6A8273A24B8}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_BasisClass", "_BasisClass", "{B614D4F1-467C-4AAE-A43D-E4F84F43427C}"
+	ProjectSection(SolutionItems) = preProject
+		BasisClass\BasisClass.h = BasisClass\BasisClass.h
+		BasisClass\BasisClass.hpp = BasisClass\BasisClass.hpp
+		BasisClass\BasisClass_D3D.h = BasisClass\BasisClass_D3D.h
+		BasisClass\BasisClass_D3DObjectManager.h = BasisClass\BasisClass_D3DObjectManager.h
+		BasisClass\BasisClass_ManagedD3DObject.h = BasisClass\BasisClass_ManagedD3DObject.h
+		BasisClass\BasisClass_ManagedObject.h = BasisClass\BasisClass_ManagedObject.h
+		BasisClass\BasisClass_ManagedObject.hpp = BasisClass\BasisClass_ManagedObject.hpp
+		BasisClass\BasisClass_ManagedObject__Interface.h = BasisClass\BasisClass_ManagedObject__Interface.h
+		BasisClass\BasisClass_ManagedObject__Interface.hpp = BasisClass\BasisClass_ManagedObject__Interface.hpp
+		BasisClass\BasisClass_ObjectManager.h = BasisClass\BasisClass_ObjectManager.h
+		BasisClass\BasisClass_ObjectManager.hpp = BasisClass\BasisClass_ObjectManager.hpp
+		BasisClass\BasisClass_ObjectManager__Interface.h = BasisClass\BasisClass_ObjectManager__Interface.h
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Engine", "Engine\Engine.vcxproj", "{03E09A3B-CC08-4AE4-91A3-B6A8273A24B8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DB2B07D2-458F-480C-A6DA-459992F61CB8} = {DB2B07D2-458F-480C-A6DA-459992F61CB8}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Output", "Output", "{B3395D9E-E0EA-4323-BA81-D6B714272CE0}"
+	ProjectSection(SolutionItems) = preProject
+		Output\Core_import.h = Output\Core_import.h
+		Output\Core_include.h = Output\Core_include.h
+		Output\Engine_import.h = Output\Engine_import.h
+		Output\Engine_include.h = Output\Engine_include.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Document", "_Document", "{1668B65D-E7A0-4305-B659-98E01579F1B3}"
+	ProjectSection(SolutionItems) = preProject
+		_Document\Memo Core.txt = _Document\Memo Core.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Guide", "_Guide", "{57025A7C-C9DD-4748-ABD3-B7E976F2FF67}"
+	ProjectSection(SolutionItems) = preProject
+		_Document_Guide\Atomic.txt = _Document_Guide\Atomic.txt
+		_Document_Guide\File Directory.txt = _Document_Guide\File Directory.txt
+		_Document_Guide\Intrinsic.txt = _Document_Guide\Intrinsic.txt
+		_Document_Guide\String.txt = _Document_Guide\String.txt
+		_Document_Guide\Used System Function.txt = _Document_Guide\Used System Function.txt
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest_Core", "TEST\UnitTest_Core\UnitTest_Core.vcxproj", "{0F5D2B75-04E6-450D-A20F-0CE76A0F2A3A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DB2B07D2-458F-480C-A6DA-459992F61CB8} = {DB2B07D2-458F-480C-A6DA-459992F61CB8}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest_Engine", "TEST\UnitTest_Engine\UnitTest_Engine.vcxproj", "{F3047421-698D-45FD-B35A-A24503073878}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DB2B07D2-458F-480C-A6DA-459992F61CB8} = {DB2B07D2-458F-480C-A6DA-459992F61CB8}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Test", "Unit Test", "{5E8D42E2-B5CC-4694-B6B8-F9522E8AB84A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB2B07D2-458F-480C-A6DA-459992F61CB8}.Debug|x64.ActiveCfg = Debug|x64
+		{DB2B07D2-458F-480C-A6DA-459992F61CB8}.Debug|x64.Build.0 = Debug|x64
+		{DB2B07D2-458F-480C-A6DA-459992F61CB8}.Debug|x86.ActiveCfg = Debug|Win32
+		{DB2B07D2-458F-480C-A6DA-459992F61CB8}.Debug|x86.Build.0 = Debug|Win32
+		{DB2B07D2-458F-480C-A6DA-459992F61CB8}.Release|x64.ActiveCfg = Release|x64
+		{DB2B07D2-458F-480C-A6DA-459992F61CB8}.Release|x64.Build.0 = Release|x64
+		{DB2B07D2-458F-480C-A6DA-459992F61CB8}.Release|x86.ActiveCfg = Release|Win32
+		{DB2B07D2-458F-480C-A6DA-459992F61CB8}.Release|x86.Build.0 = Release|Win32
+		{297399B0-029D-40A7-B62F-664C1E2A3008}.Debug|x64.ActiveCfg = Debug|x64
+		{297399B0-029D-40A7-B62F-664C1E2A3008}.Debug|x86.ActiveCfg = Debug|Win32
+		{297399B0-029D-40A7-B62F-664C1E2A3008}.Release|x64.ActiveCfg = Release|x64
+		{297399B0-029D-40A7-B62F-664C1E2A3008}.Release|x86.ActiveCfg = Release|Win32
+		{03E09A3B-CC08-4AE4-91A3-B6A8273A24B8}.Debug|x64.ActiveCfg = Debug|x64
+		{03E09A3B-CC08-4AE4-91A3-B6A8273A24B8}.Debug|x64.Build.0 = Debug|x64
+		{03E09A3B-CC08-4AE4-91A3-B6A8273A24B8}.Debug|x86.ActiveCfg = Debug|Win32
+		{03E09A3B-CC08-4AE4-91A3-B6A8273A24B8}.Debug|x86.Build.0 = Debug|Win32
+		{03E09A3B-CC08-4AE4-91A3-B6A8273A24B8}.Release|x64.ActiveCfg = Release|x64
+		{03E09A3B-CC08-4AE4-91A3-B6A8273A24B8}.Release|x64.Build.0 = Release|x64
+		{03E09A3B-CC08-4AE4-91A3-B6A8273A24B8}.Release|x86.ActiveCfg = Release|Win32
+		{03E09A3B-CC08-4AE4-91A3-B6A8273A24B8}.Release|x86.Build.0 = Release|Win32
+		{0F5D2B75-04E6-450D-A20F-0CE76A0F2A3A}.Debug|x64.ActiveCfg = Debug|x64
+		{0F5D2B75-04E6-450D-A20F-0CE76A0F2A3A}.Debug|x86.ActiveCfg = Debug|Win32
+		{0F5D2B75-04E6-450D-A20F-0CE76A0F2A3A}.Release|x64.ActiveCfg = Release|x64
+		{0F5D2B75-04E6-450D-A20F-0CE76A0F2A3A}.Release|x86.ActiveCfg = Release|Win32
+		{F3047421-698D-45FD-B35A-A24503073878}.Debug|x64.ActiveCfg = Debug|x64
+		{F3047421-698D-45FD-B35A-A24503073878}.Debug|x86.ActiveCfg = Debug|Win32
+		{F3047421-698D-45FD-B35A-A24503073878}.Release|x64.ActiveCfg = Release|x64
+		{F3047421-698D-45FD-B35A-A24503073878}.Release|x86.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DB2B07D2-458F-480C-A6DA-459992F61CB8} = {CAF35193-5EC1-4E1C-9D6D-DD313B2F7867}
+		{297399B0-029D-40A7-B62F-664C1E2A3008} = {BB22E726-CB29-4B8E-9419-3E8BD3786633}
+		{03E09A3B-CC08-4AE4-91A3-B6A8273A24B8} = {CAF35193-5EC1-4E1C-9D6D-DD313B2F7867}
+		{B3395D9E-E0EA-4323-BA81-D6B714272CE0} = {CAF35193-5EC1-4E1C-9D6D-DD313B2F7867}
+		{0F5D2B75-04E6-450D-A20F-0CE76A0F2A3A} = {5E8D42E2-B5CC-4694-B6B8-F9522E8AB84A}
+		{F3047421-698D-45FD-B35A-A24503073878} = {5E8D42E2-B5CC-4694-B6B8-F9522E8AB84A}
+		{5E8D42E2-B5CC-4694-B6B8-F9522E8AB84A} = {BB22E726-CB29-4B8E-9419-3E8BD3786633}
+	EndGlobalSection
+EndGlobal
