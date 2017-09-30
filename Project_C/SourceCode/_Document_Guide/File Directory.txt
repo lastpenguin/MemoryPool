@@ -1,0 +1,49 @@
+현재 실행파일 경로 / 현재 디렉토리
+GetCurrentDirectory		실행파일의 경로가 아니다. 그 실행파일을 실행시킨 위치에 따라 다를수있다
+GetModuleFileName
+
+//----------------------------------------------------------------
+디렉토리(경로/패치), 파일명 관련
+	ATLPATH
+	#include <atlpath.h>
+		다음을 랩핑
+			#include <shlwapi.h>
+			#pragma comment(lib, "shlwapi")
+	
+	namespace ATL::ATLPath
+	
+	경로 파일명 결합 . .. 등의 특별한 경로 문자열을 정리하고 필요하다면 \\를 추가한다
+		Append	A + B
+		Combine	C = A + B
+		
+	기타
+		IsDirectory			디렉토리 존재 확인
+		FileExists			파일 존재 확인(경로 포함)
+
+		FindFileName		파일명 위치 리턴
+		RemoveFileSpec		파일명 제거(디렉토리 경로 마지막에 \는 제거 된다)
+
+		FindExtension		확장자 위치 리턴
+		AddExtension		확장자 추가
+		RenameExtension		확장자 교체
+		RemoveExtension		확장자 제거
+
+		Canonicalize		특별한 경로 문자열을 정리한다 / . ..
+		AddBackslash		경로에 백슬래시를 덧붙인다. 이미 붙어 있다면 변경하지 않는다
+		RemoveBackslash		마지막에 백슬레시가 있다면 제거
+		RemoveBlanks		경로 앞뒤의 공백문자를 제거
+
+	<shlwapi.h>
+	PathFindNextComponent - 전체 경로 중 한 단계씩 하위로 내려간 경로를 반환한다.
+		"c:\abc\def.txt" -> "abc\def.txt"
+		"abc\def.txt" -> "def.txt"
+		"def.txt" -> ""
+	PathFindOnPath - 파일을 찾아서 완전한 경로를 반환한다. (목록이 NULL일 경우 실행 PATH에서 찾기)
+		"cmd.exe", NULL -> "C:\WINDOWS\system32\cmd.exe"
+		"iexplore.exe", { "c:\Windows", "c:\Program Files", "c:\Program Files\Internet Explorer", NULL } -> "c:\Program Files\Internet Explorer\iexplore.exe"
+		파일이 여러개라면 첫번째로 발견된 파일의 경로만 반환
+
+	PathIsDirectoryEmpty - 폴더 내부가 비어있는지 확인한다.
+	PathIsLFNFileSpec - 주어진 경로가 긴파일이름에 적합한지 확인한다.
+	PathIsRelative - 주어진 경로가 상대 경로인지 확인한다. (파일명만 있어도 상대 경로로 인정)		
+//----------------------------------------------------------------

@@ -1,0 +1,28 @@
+메모리 할당 가이드
+	NEW / delete
+	macro.h 의 _SAFE_ 시리즈 사용
+
+
+사용자 버전 폴더/파일 구성
+    (다음 DLL들은 사용자 임의 위치에)
+    Core_x86.dll
+    Core_x86D.dll
+    Core_x64.dll
+    Core_x64D.dll
+
+    [Core]
+        stdafx.h
+        Core_Interface.h
+        [UTIL]
+            MemoryPool_Interface.h
+            System_Information_Interface.h
+            LogWriter_Interface.h
+            DebugMemory.h
+            Macro.h
+    [Core Use : 폴더명은 상관없음]
+        Core_include.h
+        Core_import.h
+
+    ※ 사용자는 다음의 파일을 사용할 프로젝트 전역에 include
+        Core_include.h
+    ※ 사용자는 Core_import.h 를 통해 Core DLL 에 연결

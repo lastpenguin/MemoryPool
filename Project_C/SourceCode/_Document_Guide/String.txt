@@ -1,0 +1,24 @@
+문자열 처리 가이드
+
+//------------------------------------------------------------------------------------------------
+T				ascii			unicode			/	T(safe)			ascii(safe)		uicode(safe)
+//------------------------------------------------------------------------------------------------
+_tcslen			strlen			wcslen
+_stprintf		sprintf			_swprintf			_stprintf_s		sprintf_s		swprintf_s
+_tcscpy			strcpy			wcscpy				_tcscpy_s		strcpy_s		wcscpy_s
+_tcscmp         strcmp			wcscmp
+				strchr			wcschr
+				strstr			wcsstr
+
+_vstprintf      vsprintf		vswprintf			_vstprintf_s    vsprintf_s		vswprintf_s
+_vsctprintf     _vscprintf		_vscwprintf
+
+
+
+
+
+
+파일 / 디렉토리
+_tfopen			fopen		_wfopen					_tfopen_s		fopen_s			_wfopen_s
+_fgetts         fgets		fgetws
+_fputts         fputs		fputws

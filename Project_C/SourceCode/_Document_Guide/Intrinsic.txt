@@ -1,0 +1,70 @@
+실행초기 하드웨어의 지원여부를 먼저 확인하여 실행중지, 안내등의 조치를 취해야 한다
+    CPU가 지원하지 않는 명령을 사용시 런타임 에러를 발생하기 때문에...
+
+    System_Information 을 사용
+        AVX FMA 등은 아직 업데이트 되지않았음
+----------------------------------------------------------------
+----------------------------------------------------------------
+https://software.intel.com/sites/landingpage/IntrinsicsGuide
+SIMD
+    MMX     1996~
+    SSE     1999~
+    SSE2    2001~
+    SSE3    2004~
+    SSSE3   2006~
+    SSE4    2006~
+    SSE4a (AMD)
+        인텔에서는 이 명령들중 popcnt 만을 지원한다
+----------------------------------------------------------------
+----------------------------------------------------------------
+비트 회전
+_rotl
+_rotr
+_rotl8
+_rotr8
+_rotl16
+_rotr16
+_rotl64
+_rotr64
+
+----------------------------------------------------------------
+메모리 베리어
+#define LoadFence _mm_lfence
+#define MemoryFence _mm_mfence
+#define StoreFence _mm_sfence
+_mm_sfence
+    SSE
+_mm_mfence
+    latency 1
+    SSE2
+_mm_lfence
+    latency 2
+    SSE2
+__faststorefence
+    x64
+
+----------------------------------------------------------------
+비트 카운팅
+__popcnt
+__popcnt16
+__popcnt64
+_mm_popcnt_u32
+_mm_popcnt_u64
+    POPCNT 명령 집합
+    문제는 네할렘급 부터 적용되었다
+
+----------------------------------------------------------------
+캐시에 메모리 미리 불로오기
+_mm_prefetch
+    _MM_HINT_NTA	단 한번 읽기read 를 수행하기 위해 non-temporal buffer 로 로드한다.(캐시를 오염시키지 않는다)
+    _MM_HINT_T0	L1
+    _MM_HINT_T1	L2
+    _MM_HINT_T2	L3
+
+_mm_clflush
+	캐시에서 특정 주소 제거 nullptr 의 경우 에러
+----------------------------------------------------------------
+메모리에 저장
+SSE2
+    _mm_store_si128
+    _mm_stream_si128    using a non-temporal memory hint

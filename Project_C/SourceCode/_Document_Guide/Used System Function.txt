@@ -1,0 +1,56 @@
+//----------------------------------------------------------------
+사용한 OS, 내장함수를 기록할 것
+동작 가능한 가장 구버전 OS를 조사하기 위함
+
+디버그 버전은 제외
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+Windows
+    95 -> 98 -> ME -> 2000 -> XP -> XP(SP3) -> Vista -> 7 -> 8 -> 8.1 -> 10
+//----------------------------------------------------------------
+Project CORE
+//----------------------------------------------------------------
+    Vista               / Server 2008
+        Interlocked... 64B 단위(xp 지원을 위해서는 size_t 형식을 사용해야 한다)
+
+        동기화 객체 EX
+            CRITICAL_SECTION / MUTEX / SEMAPHORE / EVENT
+    //----------------------------------------------------------------
+    XP SP3              / Server 2003
+        GetLogicalProcessorInformation
+    //----------------------------------------------------------------
+    XP                  / Server 2003
+        Interlocked... 32B 단위
+        VirtualAlloc / VirtualFree
+        SwitchToThread
+        GetProcAddress
+        RaiseException
+        GetCurrentThreadId
+
+        동기화 객체
+            CRITICAL_SECTION / MUTEX / SEMAPHORE / EVENT
+        WaitForSingleObject / WaitForMultipleObjects
+        WaitForSingleObjectEx / WaitForMultipleObjectsEx
+    //----------------------------------------------------------------
+    2000 Professional   / Server 2000
+        GetVersionEx
+        WideCharToMultiByte / MultiByteToWideChar
+        GetWindowLong
+        SetWindowLongPtr
+        GetParent
+        GetClientRect
+        SetWindowPos
+        AdjustWindowRectEx
+        CoInitializeEx / CoUninitialize 
+    //----------------------------------------------------------------
+    2000                / Server 2000
+        GetSystemInfo
+    
+    //----------------------------------------------------------------
+    CPU 에 의한 제한
+    __cpuidex
+    __cpuid
+//----------------------------------------------------------------
+Project Engine
+//----------------------------------------------------------------
