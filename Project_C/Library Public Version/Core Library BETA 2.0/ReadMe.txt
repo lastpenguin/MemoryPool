@@ -1,37 +1,37 @@
-¶óÀÌºê·¯¸® ÀúÀÛ±ÇÀÚ
-	lastpenguin83@gmail.com
+https://github.com/lastpenguin/MemoryPool
+lastpenguin83@gmail.com
 
-»ç¿ë ¿ä±¸»çÇ×
+ì‚¬ìš© ìš”êµ¬ì‚¬í•­
 	visual studio 2015 C++
 
-½ÇÇà ¿ä±¸»çÇ×
-	visual studio 2015 C++ ¶Ç´Â,
-	Visual Studio 2015¿ë Visual C++ Àç¹èÆ÷ °¡´É ÆÐÅ°Áö
+ì‹¤í–‰ ìš”êµ¬ì‚¬í•­
+	visual studio 2015 C++ ë˜ëŠ”,
+	Visual Studio 2015ìš© Visual C++ ìž¬ë°°í¬ ê°€ëŠ¥ íŒ¨í‚¤ì§€
 		https://www.microsoft.com/ko-kr/download/details.aspx?id=48145
 //----------------------------------------------------------------
-±¸¼º
-	Core_x86.dll	Windows XP ÀÌ»ó
-	Core_x64.dll	Windows Vista ÀÌ»ó
-	¡Ø ¹®ÀÚ ÁýÇÕ : À¯´ÏÄÚµå
+êµ¬ì„±
+	Core_x86.dll	Windows XP ì´ìƒ
+	Core_x64.dll	Windows Vista ì´ìƒ
+	â€» ë¬¸ìž ì§‘í•© : ìœ ë‹ˆì½”ë“œ
 //----------------------------------------------------------------
-»ç¿ë ¹æ¹ý
-	ÃÊ±âÈ­¸¦ Ã³¸®ÇÒ cpp ÆÄÀÏ¿¡¼­ ´ÙÀ½ ÆÄÀÏÀ» Æ÷ÇÔ(include)
+ì‚¬ìš© ë°©ë²•
+	ì´ˆê¸°í™”ë¥¼ ì²˜ë¦¬í•  cpp íŒŒì¼ì—ì„œ ë‹¤ìŒ íŒŒì¼ì„ í¬í•¨(include)
 		./User/Core_import.h
-	ÃÊ±âÈ­
+	ì´ˆê¸°í™”
 		::CORE::Connect_CORE(...)
-	Á¾·á(¸í½ÃÀû Á¾·á ½ÃÁ¡ÀÌ ÇÊ¿äÇÒ¶§¸¸ »ç¿ë)
+	ì¢…ë£Œ(ëª…ì‹œì  ì¢…ë£Œ ì‹œì ì´ í•„ìš”í• ë•Œë§Œ ì‚¬ìš©)
 		::CORE::Disconnect_CORE
 
-	»ç¿ëÀ» À§ÇØ¼­´Â ´ÙÀ½ ÆÄÀÏÀ» Æ÷ÇÔ(include)
+	ì‚¬ìš©ì„ ìœ„í•´ì„œëŠ” ë‹¤ìŒ íŒŒì¼ì„ í¬í•¨(include)
 		./User/Core_include.h
 //----------------------------------------------------------------
-ÀÎÅÍÆäÀÌ½º´Â ´ÙÀ½ ÆÄÀÏµéÀ» ÂüÁ¶
+ì¸í„°íŽ˜ì´ìŠ¤ëŠ” ë‹¤ìŒ íŒŒì¼ë“¤ì„ ì°¸ì¡°
 	Core_Interface.h
 	MemoryPool_Interface.h
 	System_Information_Interface.h
 
-µð¹ö±ë¿ë ·Î±× ÇÊ¿ä½Ã ´ÙÀ½ ÆÄÀÏÀ» ÂüÁ¶ÇÏ¿© °´Ã¼¸¦ Á¤ÀÇÇÏ¿©, ÃÊ±âÈ­½Ã ÀÎ½ºÅÏ½º¸¦ Àü´ÞÇØ¾ß ÇÔ
+ë””ë²„ê¹…ìš© ë¡œê·¸ í•„ìš”ì‹œ ë‹¤ìŒ íŒŒì¼ì„ ì°¸ì¡°í•˜ì—¬ ê°ì²´ë¥¼ ì •ì˜í•˜ì—¬, ì´ˆê¸°í™”ì‹œ ì¸ìŠ¤í„´ìŠ¤ë¥¼ ì „ë‹¬í•´ì•¼ í•¨
 	LogWriter_Interface.h
 
-	pLogSystem	Áß¿äÇÑ ¿À·ùµîÀ» ±â·Ï
-	pLogDebug	ÀÏ¹Ý µð¹ö±ë Á¤º¸
+	pLogSystem	ì¤‘ìš”í•œ ì˜¤ë¥˜ë“±ì„ ê¸°ë¡
+	pLogDebug	ì¼ë°˜ ë””ë²„ê¹… ì •ë³´
