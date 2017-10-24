@@ -157,7 +157,7 @@ TAllocator
 #기타2 : 
 만약 캐시라인 크기인 64B단위로 정렬된 주소를 얻고 싶다면
 단순하게는 64B의 배수단위로 요구를 해도 됩니다
- 
+
 ### 고급 사용 방법
 파일 `MemoryPool_Interface.h`의 사용 설명을 참고 하십시오
 
@@ -168,6 +168,22 @@ Memory Pool Manager Interface
 ::UTIL::MEM::IMemoryPool_Manager
 Instance
 ::UTIL::g_pMem
+
+### 사용자의 수요예측 최적화 예
+다음의 최적화는 메모리풀의 반응시간을 대폭 줄일 수 있습니다
+(할당/해제가 여러번 반복되는 경우 virtualalloc virtualfree 호출 억제)
+
+#1) 프로그램 초기과정
+이전 실행에서의 객체별 최대 사용크기 확인
+
+#2) 객체별 최대사용 크기를 메소드에 전달
+`IMemoryPool::mFN_Hint_MaxMemorySize_Set`를 통해 전달
+
+#3) 프로그램 종료시
+통계에서 메모리풀 최대크기 조사, 저장
+`IMemoryPool::mFN_Query_Stats`
+`TMemoryPool_Stats::Base::nMaxSize_Pool`
+
 
 * * *
 ## 작성자 코멘트
