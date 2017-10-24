@@ -178,7 +178,8 @@ Instance<br/>
 이전 실행에서의 객체별 최대 사용크기 확인<br/>
 
 #2) 객체별 최대사용 크기를 메소드에 전달<br/>
-`IMemoryPool::mFN_Hint_MaxMemorySize_Set`를 통해 전달<br/>
+<del>`IMemoryPool::mFN_Hint_MaxMemorySize_Set`를 통해 전달</del><br/>
+(※ 현재 부정확하게 동작함)<br/>
 
 #3) 프로그램 종료시<br/>
 통계에서 메모리풀 최대크기 조사, 저장<br/>
