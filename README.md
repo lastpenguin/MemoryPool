@@ -65,10 +65,9 @@ c++ / Windows xp~ / Visual Studio 2015~
 ## 코드내 사용 방법
 (다음의 방법들은 모두 혼용사용이 가능합니다) 
  
-#1) 이미 작성된 코드에 쉽게 적용하는 방법
-메모리풀을 적용하려는 객체는 `CMemoryPoolResource`를 상속받습니다. 
-※ 주의 : 자식 클래스까지 모두 메모리풀의 영향을 받습니다. 
-
+#1) 이미 작성된 코드에 쉽게 적용하는 방법<br/>
+메모리풀을 적용하려는 객체는 `CMemoryPoolResource`를 상속받습니다.<br/>
+※ 주의 : 자식 클래스까지 모두 메모리풀의 영향을 받습니다.<br/>
 ```c++
 예:)
 class CTest1 : public CMemoryPoolResource {
@@ -107,7 +106,8 @@ delete p;
 ```
 `new delete` 를 이용하여 사용합니다. 
  
-#2) 객체단위에 대하여 만약 상속을 사용하지 않고 특정상황에만 사용하고 싶다면 다음의 매크로를 사용합니다. `CMemoryPoolResource`를 상속 받은 타입또한 가능합니다
+#2) 객체단위에 대하여 만약 상속을 사용하지 않고 특정상황에만 사용하고 싶다면 다음의 매크로를 사용합니다.<br/>
+`CMemoryPoolResource`를 상속 받은 타입또한 가능합니다.<br/>
 ```
 // ■ 매크로 버전 : 할당자 / 소멸자 비 호출 
 _MACRO_ALLOC__FROM_MEMORYPOOL(Address) 
@@ -127,8 +127,8 @@ TTest1* p2 = nullptr;
 _MACRO_NEW__FROM_MEMORYPOOL(p1, TTest1(...));
 _MACRO_DELETE__FROM_MEMORYPOOL(p1);
 ```
-#3) 가변크기 사용
-만약 할당하려는 크기가 가변적(예를 들어 문자열 버퍼) 이라면 메모리풀관리자에 직접 접근하여 다음의 메소드를 사용합니다 
+#3) 가변크기 사용<br/>
+만약 할당하려는 크기가 가변적(예를 들어 문자열 버퍼) 이라면 메모리풀관리자에 직접 접근하여 다음의 메소드를 사용합니다.<br/>
 ```
 IMemoryPool_Manager::mFN_Get_Memory 
 IMemoryPool_Manager::mFN_Return_Memory 
@@ -154,36 +154,36 @@ TAllocator
 ```
 이것은 `vector` 같은 매우 가변적 크기 할당에 사용하지 않는 것이 좋습니다 
 
-#기타2 : 
-만약 캐시라인 크기인 64B단위로 정렬된 주소를 얻고 싶다면
-단순하게는 64B의 배수단위로 요구를 해도 됩니다
+#기타2 : <br/>
+만약 캐시라인 크기인 64B단위로 정렬된 주소를 얻고 싶다면<br/>
+단순하게는 64B의 배수단위로 요구를 해도 됩니다<br/>
 
 ### 고급 사용 방법
-파일 `MemoryPool_Interface.h`의 사용 설명을 참고 하십시오
+파일 `MemoryPool_Interface.h`의 사용 설명을 참고 하십시오<br/>
 
-Memory Pool Interface
-::UTIL::MEM::IMemoryPool
+Memory Pool Interface<br/>
+::UTIL::MEM::IMemoryPool<br/>
 
-Memory Pool Manager Interface
-::UTIL::MEM::IMemoryPool_Manager
-Instance
-::UTIL::g_pMem
+Memory Pool Manager Interface<br/>
+::UTIL::MEM::IMemoryPool_Manager<br/>
+
+Instance<br/>
+::UTIL::g_pMem<br/>
 
 ### 사용자의 수요예측 최적화 예
-다음의 최적화는 메모리풀의 반응시간을 대폭 줄일 수 있습니다
-(할당/해제가 여러번 반복되는 경우 virtualalloc virtualfree 호출 억제)
+다음의 최적화는 메모리풀의 반응시간을 대폭 줄일 수 있습니다<br/>
+(할당/해제가 여러번 반복되는 경우 virtualalloc virtualfree 호출 억제)<br/>
 
-#1) 프로그램 초기과정
-이전 실행에서의 객체별 최대 사용크기 확인
+#1) 프로그램 초기과정<br/>
+이전 실행에서의 객체별 최대 사용크기 확인<br/>
 
-#2) 객체별 최대사용 크기를 메소드에 전달
-`IMemoryPool::mFN_Hint_MaxMemorySize_Set`를 통해 전달
+#2) 객체별 최대사용 크기를 메소드에 전달<br/>
+`IMemoryPool::mFN_Hint_MaxMemorySize_Set`를 통해 전달<br/>
 
-#3) 프로그램 종료시
-통계에서 메모리풀 최대크기 조사, 저장
-`IMemoryPool::mFN_Query_Stats`
-`TMemoryPool_Stats::Base::nMaxSize_Pool`
-
+#3) 프로그램 종료시<br/>
+통계에서 메모리풀 최대크기 조사, 저장<br/>
+`IMemoryPool::mFN_Query_Stats`<br/>
+`TMemoryPool_Stats::Base::nMaxSize_Pool`<br/>
 
 * * *
 ## 작성자 코멘트
@@ -217,7 +217,7 @@ class OBJ2{
 이 메모리풀은 게임같은 곳에 사용시 LFH, TBB에 비해 좀더 메모리를 절약합니다
 (아마도요, 계속 해서 LFH, TBB 와 비교해왔거든요)
 LFH에 비해 좀더 다양한 풀로 분할했습니다
-기본 청크 단위는 256KB이며(아마 제 기억이 맞을 겁니다), 이것을 다시 몇 개의 그룹으로 분할하여 여러 스레드 경쟁을 줄입니다
+기본 청크 단위는 256KB이며, 이것을 다시 몇 개의 그룹으로 분할하여 여러 스레드 경쟁을 줄입니다
 실제 virtualalloc 시에는 256KB * x 단위로 한번에 더 많이 할당합니다(여러개의 청크를 한번에 생성합니다)
 그리고 이 청크들은 각 단위사이즈를 사용하는 풀에서 필요시 분할해서 가져가 사용합니다
 여기서 왜 윈도우 메모리 예약단위인 64KB가 아닌 256KB 냐고 묻는다면 순전히 메모리 절약을 위해서 입니다
