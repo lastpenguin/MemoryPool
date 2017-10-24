@@ -73,20 +73,42 @@ c++ / Windows xp~ / Visual Studio 2015~
 예:)
 class CTest1 : public CMemoryPoolResource {
 ...
+};
 
-CTest1* p = new Ctest1(...);
+CTest1* p = new CTest1(...);
 delete p;
+```
+
+```c++
 예:) 
 struct TTest1 : CMemoryPoolResource {
 ...
+};
 
 TTest1* p = new TTest1;
 delete p;
 ```
+
+```c++
+class CParent : public CMemoryPoolResource {
+public:
+ virtual ~CParent();
+...
+};
+class CChild : public CParent {
+...
+};
+
+//CParent::__Get_MemoryPool<sizeof(CParent)>()->mFN_Hint_MaxMemorySize_Add(sizeof(CParent)*1000);
+//CChild::__Get_MemoryPool<CChild>()->mFN_Hint_MaxMemorySize_Set(sizeof(CChild)*500);
+
+CParent* p = new CChild(...);
+delete p;
+```
 `new delete` 를 이용하여 사용합니다. 
  
-#2) 객체단위에 대하여 만약 상속을 사용하지 않고 특정상황에만 사용하고 싶다면 다음의 매크로를 사용합니다. (`CMemoryPoolResource`를 상속 받은 타입또한 가능합니다
-```c++
+#2) 객체단위에 대하여 만약 상속을 사용하지 않고 특정상황에만 사용하고 싶다면 다음의 매크로를 사용합니다. `CMemoryPoolResource`를 상속 받은 타입또한 가능합니다
+```
 // ■ 매크로 버전 : 할당자 / 소멸자 비 호출 
 _MACRO_ALLOC__FROM_MEMORYPOOL(Address) 
 _MACRO_FREE__FROM_MEMORYPOOL(Address) 
@@ -94,20 +116,20 @@ _MACRO_FREE__FROM_MEMORYPOOL(Address)
 // ■ 매크로 버전 : 할당자 / 소멸자 호출 
 _MACRO_NEW__FROM_MEMORYPOOL(Address, Constructor) 
 _MACRO_DELETE__FROM_MEMORYPOOL(Address) 
-
+```
+```c++
 예:)
 TTest1* p1 = nullptr;
-_MACRO_ALLOC__FROM_MEMORYPOOL(p1) 
-_MACRO_FREE__FROM_MEMORYPOOL(p2) 
+_MACRO_ALLOC__FROM_MEMORYPOOL(p1);
+_MACRO_FREE__FROM_MEMORYPOOL(p2);
 
 TTest1* p2 = nullptr;
 _MACRO_NEW__FROM_MEMORYPOOL(p1, TTest1(...));
 _MACRO_DELETE__FROM_MEMORYPOOL(p1);
-
 ```
 #3) 가변크기 사용
 만약 할당하려는 크기가 가변적(예를 들어 문자열 버퍼) 이라면 메모리풀관리자에 직접 접근하여 다음의 메소드를 사용합니다 
-```c++
+```
 IMemoryPool_Manager::mFN_Get_Memory 
 IMemoryPool_Manager::mFN_Return_Memory 
 IMemoryPool_Manager::mFN_Get_Memory__AlignedCacheSize       // 캐시라인 정렬 버전 
@@ -117,7 +139,8 @@ IMemoryPool_Manager::mFN_Return_Memory__AlignedCacheSize    // 캐시라인 정�
 // ※ malloc / free 를 대신하기에 적합한 방법입니다. 
 _MACRO_ALLOC__FROM_MEMORYPOOL_GENERIC 
 _MACRO_FREE__FROM_MEMORYPOOL_GENERIC
-
+```
+```c++
 예:)
 TTest1* p1 = _MACRO_ALLOC__FROM_MEMORYPOOL_GENERIC(sizeof(TTest1));
 ...
