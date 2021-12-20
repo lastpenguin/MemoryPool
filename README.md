@@ -6,7 +6,7 @@ Layer :
 
 uses internally winapi virtulalloc functions to handle the memory
 
-## Performance Test(do not repeat)
+## Performance Test(is not repeated)
 performance test(1 thread)
 My Memory Pool vs LFH vs TBB malloc
 ![test(min 128 max 512)1024 T1 N](https://user-images.githubusercontent.com/32404507/146826203-888a3fb9-7643-447a-9aed-2c5805b3e610.png)
