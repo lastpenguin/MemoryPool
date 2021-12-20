@@ -1,6 +1,20 @@
 # MemoryPool
 c++ / Windows xp~ / Visual Studio 2015~
 
+## Performance Test
+performance test : 1 thread
+My Memory Pool vs LFH vs TBB malloc
+![test(min 128 max 512)1024 T1 N](https://user-images.githubusercontent.com/32404507/146826203-888a3fb9-7643-447a-9aed-2c5805b3e610.png)
+
+performance test : 8 thread
+My Memory Pool vs LFH vs TBB malloc
+![test(min 128 max 512)1024 T8 N](https://user-images.githubusercontent.com/32404507/146826303-786d5aba-6e6b-4bc4-9498-58bf3ca64c37.png)
+
+
+## 구조
+![메모리풀 메모리 구조 V2](https://user-images.githubusercontent.com/32404507/146826493-70b70550-e06b-4b39-88d4-354b313804cf.png)
+
+
 ## 프로젝트 우선순위
 1. 스레드 세이프
 2. 메모리 논리적 주소, 물리적 공간의 단편화 방지
