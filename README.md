@@ -2,11 +2,11 @@
 c++ / Windows xp~ / Visual Studio 2015~
 
 ## Performance Test
-performance test : 1 thread
+performance test(1 thread)
 My Memory Pool vs LFH vs TBB malloc
 ![test(min 128 max 512)1024 T1 N](https://user-images.githubusercontent.com/32404507/146826203-888a3fb9-7643-447a-9aed-2c5805b3e610.png)
 
-performance test : 8 thread
+performance test(8 thread)
 My Memory Pool vs LFH vs TBB malloc
 ![test(min 128 max 512)1024 T8 N](https://user-images.githubusercontent.com/32404507/146826303-786d5aba-6e6b-4bc4-9498-58bf3ca64c37.png)
 
