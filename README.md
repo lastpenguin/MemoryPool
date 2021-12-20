@@ -1,6 +1,10 @@
 # MemoryPool
 c++ / Windows xp~ / Visual Studio 2015~
 
+Layer : 
+  VMEM <-> MemoryUnitsGroup_List <-> UnitsGroup (per cpu core) <-> Thread Local Storage
+
+
 ## Performance Test
 performance test(1 thread)
 My Memory Pool vs LFH vs TBB malloc
