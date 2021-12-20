@@ -4,8 +4,9 @@ c++ / Windows xp~ / Visual Studio 2015~
 Layer : 
   VMEM <-> MemoryUnitsGroup_List <-> UnitsGroup (per cpu core) <-> Thread Local Storage
 
+uses internally winapi virtulalloc functions to handle the memory
 
-## Performance Test
+## Performance Test(do not repeat)
 performance test(1 thread)
 My Memory Pool vs LFH vs TBB malloc
 ![test(min 128 max 512)1024 T1 N](https://user-images.githubusercontent.com/32404507/146826203-888a3fb9-7643-447a-9aed-2c5805b3e610.png)
@@ -14,6 +15,7 @@ performance test(8 thread)
 My Memory Pool vs LFH vs TBB malloc
 ![test(min 128 max 512)1024 T8 N](https://user-images.githubusercontent.com/32404507/146826303-786d5aba-6e6b-4bc4-9498-58bf3ca64c37.png)
 
+As with other memory pools, performance is better when used repeatedly.
 
 ## 구조
 ![메모리풀 메모리 구조 V2](https://user-images.githubusercontent.com/32404507/146826493-70b70550-e06b-4b39-88d4-354b313804cf.png)
