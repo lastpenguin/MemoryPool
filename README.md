@@ -251,6 +251,20 @@ LFH에 비해 좀더 다양한 풀로 분할했습니다
 ### 이 메모리풀은 8논리코어 이하에 최적화 되어있습니다
 (사실 혼자 쓰려 했는데 라이젠때문에 메인스트림이 12, 16 스레드로 바뀌어서 오픈소스화 합니다)
 
+### 컴파일시 옵션
+MemoryPool_v2/MemoryPoolCore_v2.h
+
+// Release버전에서 테스트 ON
+//#define _DEF_USING_MEMORYPOOL_DEBUG 1
+주석 해제시 디버그모드가 아니여도 출력창에 정보표시
+
+// 프로파일링 ON
+//#define _DEF_USING_MEMORYPOOL__PERFORMANCE_PROFILING 1
+visual studio 에서 프로파일링 도구 사용시,
+메모리풀 함수/메소드 일부는 인라인화되어 사용자는 이런 부분들의
+프로파일링 결과를 세밀하게 분석하기 힘들어지기때문에
+필요한 부분의 인라인화를 막는 옵션
+
 ### 질문은 lastpenguin83@gmail.com 으로 하시거나 이곳에 하십시오
 
 2015년 이후로 수정하지 않아 기억나지 않는 부분이 많습니다.
