@@ -1,4 +1,5 @@
-# MemoryPool
+# MemoryPool  
+very simple memory pool  
 c++ / Windows xp~ / Visual Studio 2015~
 
 Layer : 
@@ -18,8 +19,9 @@ My Memory Pool vs LFH vs TBB malloc
 Better performance when used repeatedly
 
 ## 구조
-![메모리풀 메모리 구조 V2](https://user-images.githubusercontent.com/32404507/146826493-70b70550-e06b-4b39-88d4-354b313804cf.png)
-
+![메모리풀 메모리 구조 V2](https://user-images.githubusercontent.com/32404507/146826493-70b70550-e06b-4b39-88d4-354b313804cf.png)  
+![메모리풀 메모리 흐름 V2](https://user-images.githubusercontent.com/32404507/150671861-b4c5bd09-870b-4ea4-afff-48c280e1e7fc.png)
+  
 
 ## 프로젝트 우선순위
 1. 스레드 세이프
