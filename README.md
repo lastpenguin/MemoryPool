@@ -7,7 +7,7 @@ Layer :
 
 uses internally winapi virtulalloc functions to handle the memory
 
-## Performance Test(is not repeated)
+## Performance Test1(is not repeated)
 performance test(1 thread)
 My Memory Pool vs LFH vs TBB malloc
 ![test(min 128 max 512)1024 T1 N](https://user-images.githubusercontent.com/32404507/146826203-888a3fb9-7643-447a-9aed-2c5805b3e610.png)
@@ -18,6 +18,31 @@ My Memory Pool vs LFH vs TBB malloc
 
 Better performance when used repeatedly
 
+
+## Performance Test2(ARM cpu + windows10)  
+test program path  :  
+https://github.com/lastpenguin/MemoryPool/tree/master/Project_C/SourceCode/x64/Release  
+test code :    
+https://github.com/lastpenguin/MemoryPool/blob/master/Project_C/SourceCode/TEST/ConsoleTestProject/test_memorypool.h  
+  
+atom x5-z8350, 4core, 4GB ram  
+test loop : 20  
+object size : 32 ~ 512  
+random seed : 0  
+mem size per test : 512MB  
+write / read test : no   
+
+thread 1:  
+pool 47.5925 sec  
+lfh  69.9947 sec  
+tbb  50.1776 sec  
+  
+thread 4:  
+pool 21.3557 sec  
+lfh  31.0175 sec  
+tbb  21.7671 sec  
+  
+  
 ## 구조
 ![메모리풀 메모리 구조 V2](https://user-images.githubusercontent.com/32404507/146826493-70b70550-e06b-4b39-88d4-354b313804cf.png)  
 ![메모리풀 메모리 흐름 V2](https://user-images.githubusercontent.com/32404507/150671861-b4c5bd09-870b-4ea4-afff-48c280e1e7fc.png)
