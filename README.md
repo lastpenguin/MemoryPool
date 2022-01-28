@@ -6,7 +6,11 @@ Layer :
   VMEM <-> MemoryUnitsGroup_List <-> UnitsGroup (per cpu core) <-> Thread Local Storage
 
 uses internally winapi virtulalloc functions to handle the memory
-
+  
+flexible object pool  
+unique object pool  
+https://github.com/lastpenguin/MemoryPool/blob/master/Project_C/SourceCode/Core/UTIL/ObjectPool.h  
+  
 ## Performance Test1(is not repeated)
 performance test(1 thread)
 My Memory Pool vs LFH vs TBB malloc
