@@ -7,38 +7,38 @@
 
 
 
-// Direct X
-#if __X64
-    #ifdef _DEBUG
-        #pragma comment(lib, "../DirectX/Lib/x64/d3dx11d.lib")
-    #else
-        #pragma comment(lib, "../DirectX/Lib/x64/d3dx11.lib")
-    #endif
-
-        #pragma comment(lib, "../DirectX/Lib/x64/d3d11.lib")
-        #pragma comment(lib, "../DirectX/Lib/x64/dinput8.lib")
-        #pragma comment(lib, "../DirectX/Lib/x64/dxguid.lib")
-        #pragma comment(lib, "../DirectX/Lib/x64/d3dcompiler.lib")
-        #pragma comment(lib, "../DirectX/Lib/x64/DxErr.lib")
-        #pragma comment(lib, "../DirectX/Lib/x64/dxgi.lib")
-
-#elif __X86
-    #ifdef _DEBUG
-        #pragma comment(lib, "../DirectX/Lib/x86/d3dx11d.lib")
-    #else
-        #pragma comment(lib, "../DirectX/Lib/x86/d3dx11.lib")
-    #endif
-
-        #pragma comment(lib, "../DirectX/Lib/x86/d3d11.lib")
-        #pragma comment(lib, "../DirectX/Lib/x86/dinput8.lib")
-        #pragma comment(lib, "../DirectX/Lib/x86/dxguid.lib")
-        #pragma comment(lib, "../DirectX/Lib/x86/d3dcompiler.lib")
-        #pragma comment(lib, "../DirectX/Lib/x86/DxErr.lib")
-        #pragma comment(lib, "../DirectX/Lib/x86/dxgi.lib")
-#else
-
-    #error
-#endif
+//// Direct X
+//#if __X64
+//    #ifdef _DEBUG
+//        #pragma comment(lib, "../DirectX/Lib/x64/d3dx11d.lib")
+//    #else
+//        #pragma comment(lib, "../DirectX/Lib/x64/d3dx11.lib")
+//    #endif
+//
+//        #pragma comment(lib, "../DirectX/Lib/x64/d3d11.lib")
+//        #pragma comment(lib, "../DirectX/Lib/x64/dinput8.lib")
+//        #pragma comment(lib, "../DirectX/Lib/x64/dxguid.lib")
+//        #pragma comment(lib, "../DirectX/Lib/x64/d3dcompiler.lib")
+//        #pragma comment(lib, "../DirectX/Lib/x64/DxErr.lib")
+//        #pragma comment(lib, "../DirectX/Lib/x64/dxgi.lib")
+//
+//#elif __X86
+//    #ifdef _DEBUG
+//        #pragma comment(lib, "../DirectX/Lib/x86/d3dx11d.lib")
+//    #else
+//        #pragma comment(lib, "../DirectX/Lib/x86/d3dx11.lib")
+//    #endif
+//
+//        #pragma comment(lib, "../DirectX/Lib/x86/d3d11.lib")
+//        #pragma comment(lib, "../DirectX/Lib/x86/dinput8.lib")
+//        #pragma comment(lib, "../DirectX/Lib/x86/dxguid.lib")
+//        #pragma comment(lib, "../DirectX/Lib/x86/d3dcompiler.lib")
+//        #pragma comment(lib, "../DirectX/Lib/x86/DxErr.lib")
+//        #pragma comment(lib, "../DirectX/Lib/x86/dxgi.lib")
+//#else
+//
+//    #error
+//#endif
 
 
 

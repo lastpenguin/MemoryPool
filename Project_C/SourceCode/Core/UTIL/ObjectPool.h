@@ -288,16 +288,16 @@ namespace MEM{
 
             OBJPOOLCACHE::gFN_Free_from_ObjectPool__Shared__Max1KB(_Ptr, sizeof(_Ty)*_Count);
         }
-        TAllocatorOBJ() _THROW0()
+        TAllocatorOBJ() noexcept
         {
         }
 
-        TAllocatorOBJ(const TAllocatorOBJ<_Ty>&) _THROW0()
+        TAllocatorOBJ(const TAllocatorOBJ<_Ty>&) noexcept
         {
         }
 
         template<class _Other>
-        TAllocatorOBJ(const TAllocatorOBJ<_Other>&) _THROW0()
+        TAllocatorOBJ(const TAllocatorOBJ<_Other>&) noexcept
         {
         }
         ~TAllocatorOBJ()
@@ -339,7 +339,7 @@ namespace MEM{
             _Ptr->~_Uty();
         }
 
-        size_t max_size() const _NOEXCEPT
+        size_t max_size() const noexcept
         {	// estimate maximum array size
             return ((size_t)(-1) / sizeof (_Ty));
         }

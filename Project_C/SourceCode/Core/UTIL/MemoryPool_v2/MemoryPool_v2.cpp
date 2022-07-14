@@ -7,6 +7,7 @@
 
 #include "../../Core.h"
 #pragma warning(disable: 6255)
+#pragma warning(disable: 26495)
 /*----------------------------------------------------------------
 /   메모리 유닛 관리 형태(스택/큐)
 /       가장 많이 사용하게될 동적메모리 수요 패턴을 예측하자면 다음과 같다
@@ -529,7 +530,11 @@ namespace MEM{
     void CMemoryPool__BadSize::mFN_Set_OnOff_WriteStats_to_LogFile(BOOL _On)
     {
         m_bWriteStats_to_LogFile = _On;
+    #if _MSC_VER <= 1900 // ~ vc 2015
         std::_Atomic_thread_fence(std::memory_order::memory_order_release);
+    #else        
+        std::atomic_thread_fence(std::memory_order::memory_order_release);
+    #endif
     }
     //----------------------------------------------------------------
     void CMemoryPool__BadSize::mFN_Return_Memory_Process(TMemoryObject * pAddress)
@@ -1645,7 +1650,7 @@ namespace MEM{
         const BOOL b1 = (0 == Aligned_First % AlignSize);
         const BOOL b2 = (0 == UnitRange % AlignSize);
 
-        return (b1 && b2);
+        return (b1 & b2);
     }
     BOOL CMemoryPool::mFN_Query_Stats(TMemoryPool_Stats* pOUT)
     {
@@ -1810,7 +1815,12 @@ namespace MEM{
         _On = !_On;
 
         m_bUse_OnlyBasket_0 = _On;
+
+    #if _MSC_VER <= 1900 // ~ vc 2015
         std::_Atomic_thread_fence(std::memory_order::memory_order_release);
+    #else
+        std::atomic_thread_fence(std::memory_order::memory_order_release);
+    #endif
         if(_On)
         {
             // 0번 을 제외한 모든 프로세서 저장소의 연결된 유닛그룹 제거
@@ -1844,7 +1854,11 @@ namespace MEM{
     void CMemoryPool::mFN_Set_OnOff_WriteStats_to_LogFile(BOOL _On)
     {
         m_bWriteStats_to_LogFile = _On;
+    #if _MSC_VER <= 1900 // ~ vc 2015
         std::_Atomic_thread_fence(std::memory_order::memory_order_release);
+    #else
+        std::atomic_thread_fence(std::memory_order::memory_order_release);
+    #endif
     }
     //----------------------------------------------------------------
     void CMemoryPool::mFN_GiveBack_Unit(TMemoryUnitsGroup* pChunk, TMemoryObject* pUnit)
@@ -2133,7 +2147,11 @@ namespace MEM{
             if(!ListUnitGroup_Rest.mFN_Query_IsEmpty())
                 pChunk = ListUnitGroup_Rest.mFN_PopFront();
 
+        #if _MSC_VER <= 1900 // ~ vc 2015
             std::_Atomic_thread_fence(std::memory_order::memory_order_consume);
+        #else
+            std::atomic_thread_fence(std::memory_order::memory_order_consume);
+        #endif
             // 다른 스레드에서 바로 전에 확장을 요청했다면 변동사항이 있을 수 있다
             if(!pChunk && !ListUnitGroup_Full.mFN_Query_IsEmpty())
                 pChunk = ListUnitGroup_Full.mFN_PopFront();
@@ -2938,7 +2956,7 @@ namespace MEM{
 
             if(GLOBAL::g_bDebug__Trace_MemoryLeak)
             {
-                for(auto iter : m_map_Lend_MemoryUnits)
+                for(const auto iter : m_map_Lend_MemoryUnits)
                 {
                     const void* p = iter.first;
                     const TTrace_SourceCode& tag = iter.second;

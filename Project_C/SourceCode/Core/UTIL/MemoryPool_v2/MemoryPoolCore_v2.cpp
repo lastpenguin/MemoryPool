@@ -27,6 +27,7 @@ _MACRO_STATIC_ASSERT(sizeof(::UTIL::LOCK::CSpinLock) == 8);
 _DEF_COMPILE_MSG__WARNING("배포금지!! _DEF_USING_MEMORYPOOL__PERFORMANCE_PROFILING : 인라인 비활성화")
 #endif
 
+#pragma warning(disable: 26495)
 
 namespace UTIL{
 namespace MEM{
@@ -2070,12 +2071,12 @@ namespace MEM{
             {
                 // 설정으로 인한 최악의 낭비 예측(프로세서 저장소에 저장된채 사용되지 못하는 경우)
                 const size_t _nTargetPools = 112;
-                const size_t __Max_Waste_of_SizeMB__core2 = _nTargetPools * _DivisionSize * 1 / 1024 / 1024;
-                const size_t __Max_Waste_of_SizeMB__core3 = _nTargetPools * _DivisionSize * 2 / 1024 / 1024;
-                const size_t __Max_Waste_of_SizeMB__core4 = _nTargetPools * _DivisionSize * 3 / 1024 / 1024;
-                const size_t __Max_Waste_of_SizeMB__core6 = _nTargetPools * _DivisionSize * 5 / 1024 / 1024;
-                const size_t __Max_Waste_of_SizeMB__core8 = _nTargetPools * _DivisionSize * 7 / 1024 / 1024;
-                const size_t __Max_Waste_of_SizeMB__core12 = _nTargetPools * _DivisionSize * 11 / 1024 / 1024;
+                static const size_t __Max_Waste_of_SizeMB__core2 = _nTargetPools * _DivisionSize * 1 / 1024 / 1024;
+                static const size_t __Max_Waste_of_SizeMB__core3 = _nTargetPools * _DivisionSize * 2 / 1024 / 1024;
+                static const size_t __Max_Waste_of_SizeMB__core4 = _nTargetPools * _DivisionSize * 3 / 1024 / 1024;
+                static const size_t __Max_Waste_of_SizeMB__core6 = _nTargetPools * _DivisionSize * 5 / 1024 / 1024;
+                static const size_t __Max_Waste_of_SizeMB__core8 = _nTargetPools * _DivisionSize * 7 / 1024 / 1024;
+                static const size_t __Max_Waste_of_SizeMB__core12 = _nTargetPools * _DivisionSize * 11 / 1024 / 1024;
             }
             size_t _Division = _MemorySizeUnits_UserSpace / _DivisionSize;
             if(_Division <= 1)

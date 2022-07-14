@@ -735,16 +735,16 @@ namespace MEM{
                 return ::UTIL::g_pMem->mFN_Return_Memory(_Ptr);
         }
 
-        TAllocator() _THROW0()
+        TAllocator() noexcept
         {	// construct default allocator (do nothing)
         }
 
-        TAllocator(const TAllocator<_Ty>&) _THROW0()
+        TAllocator(const TAllocator<_Ty>&) noexcept
         {	// construct by copying (do nothing)
         }
 
         template<class _Other>
-        TAllocator(const TAllocator<_Other>&) _THROW0()
+        TAllocator(const TAllocator<_Other>&) noexcept
         {	// construct from a related allocator (do nothing)
         }
 
@@ -783,7 +783,7 @@ namespace MEM{
             _Ptr->~_Uty();
         }
 
-        size_t max_size() const _NOEXCEPT
+        size_t max_size() const noexcept
         {	// estimate maximum array size
             return ((size_t)(-1) / sizeof (_Ty));
         }

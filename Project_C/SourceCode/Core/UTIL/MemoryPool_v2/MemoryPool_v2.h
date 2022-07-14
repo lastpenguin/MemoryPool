@@ -130,10 +130,10 @@ namespace MEM{
         volatile size_t m_UsingSize;
         volatile size_t m_UsingCounting;
         BOOL m_bWriteStats_to_LogFile;
-        UINT32 _FreeSlog1;
+        UINT32 _FreeSlot1 = 0;
 
         volatile size_t m_stats_Maximum_AllocatedSize;
-        size_t _FreeSlot2;
+        size_t _FreeSlot2 = 0;
 
         ::UTIL::NUMBER::TCounting_LockFree_UT m_stats_Counting_Free_BadPTR;
     };

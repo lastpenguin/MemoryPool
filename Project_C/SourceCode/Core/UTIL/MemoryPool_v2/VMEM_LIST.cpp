@@ -580,7 +580,11 @@ namespace MEM{
     {
         TDATA_VMEM* ret;
 
+    #if _MSC_VER <= 1900 // ~ vc 2015
         ::std::_Atomic_thread_fence(std::memory_order::memory_order_consume);
+    #else
+        ::std::atomic_thread_fence(std::memory_order::memory_order_consume);
+    #endif
         if(!m_cnt_VMEM)
             return nullptr;
         m_Lock.Lock__Lazy();
@@ -614,7 +618,11 @@ namespace MEM{
 
         BOOL bSucceed_Push = FALSE;
         // TDATA_VMEM p가 비어있는 더미가 있을수 없다면 오버플로우는 체크 할 필요 없다
+    #if _MSC_VER <= 1900 // ~ vc 2015
         std::_Atomic_thread_fence(std::memory_order::memory_order_consume);
+    #else
+        std::atomic_thread_fence(std::memory_order::memory_order_consume);
+    #endif
         if(m_stats.m_Max_Storage_MemorySize >= (m_stats.m_Current_MemorySize + sizeVMEM))
         {
             m_Lock.Lock__Busy();

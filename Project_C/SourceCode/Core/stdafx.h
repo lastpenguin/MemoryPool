@@ -25,6 +25,7 @@ typedef unsigned char byte;
 // 기본 헤더
 #include <windows.h>
 #include <process.h>
+#include <intrin.h>
 #include <tchar.h>
 #include <cstdio>
 #include <malloc.h>

@@ -216,11 +216,11 @@ namespace UTIL{
         // Ver1
         class CCallFinishFunction{
         public:
-            CCallFinishFunction(const std::function<void()>& _function)
+            CCallFinishFunction(std::function<void()>& _function)
                 : m_FN(_function)
             {
             }
-            CCallFinishFunction(const std::function<void()>&& _function)
+            CCallFinishFunction(std::function<void()>&& _function)
                 : m_FN(std::move(_function))
             {
             }

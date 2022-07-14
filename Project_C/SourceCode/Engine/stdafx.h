@@ -29,15 +29,15 @@
 #include "./UTIL/Timer.h"
 #include "./UTIL/SimpleTimer.h"
 
-// Direct X
-#pragma warning(push)
-#pragma warning(disable: 4005)
-#include "../DirectX/Include/D3D11.h"
-#include "../DirectX/Include/D3DX11.h"
-
-#define DIRECTINPUT_VERSION 0x0800
-#include "../DirectX/Include/dinput.h"
-#pragma warning(pop)
+//// Direct X
+//#pragma warning(push)
+//#pragma warning(disable: 4005)
+//#include "../DirectX/Include/D3D11.h"
+//#include "../DirectX/Include/D3DX11.h"
+//
+//#define DIRECTINPUT_VERSION 0x0800
+//#include "../DirectX/Include/dinput.h"
+//#pragma warning(pop)
 
 
 

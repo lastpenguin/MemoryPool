@@ -537,7 +537,11 @@ namespace MEM{
     void CObjectPool::mFN_Set_OnOff_CheckOverflow(BOOL bCheck)
     {
         m_bCheckOverflow = bCheck;
+    #if _MSC_VER <= 1900 // ~ vc 2015
         std::_Atomic_thread_fence(std::memory_order::memory_order_release);
+    #else
+        std::atomic_thread_fence(std::memory_order::memory_order_release);
+    #endif
     }
 
 }

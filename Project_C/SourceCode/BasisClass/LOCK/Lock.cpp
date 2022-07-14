@@ -235,7 +235,7 @@ namespace UTIL{
         void CSpinLock::__Debug_LockBefore(DWORD tid)
         {
         #ifdef _DEBUG
-            const DWORD flag = m_intoFlag;
+            //const DWORD flag = m_intoFlag;
             _AssertMsg(m_intoFlag != tid, _T("is Locked\nfrom this thread(ID : %u)"), tid);
         #else
             UNREFERENCED_PARAMETER(tid);

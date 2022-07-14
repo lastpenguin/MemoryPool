@@ -463,7 +463,7 @@ namespace UTIL{
         {
             _Assert(pSource && SizeSource);
             const size_t c_mask_one_under_16BYTE = 16-1;
-            const size_t c_mask_zero_under_16BYTE = ~((size_t)16-1);
+            //const size_t c_mask_zero_under_16BYTE = ~((size_t)16-1);
             _Assert(!(SizeSource & c_mask_one_under_16BYTE));
 
         #if __X86
@@ -501,7 +501,7 @@ namespace UTIL{
             // SSE2 명령어 한정(2001년 이후 CPU)
             _Assert(pSource && SizeSource);
             const size_t c_SizeChunk = sizeof(__m128i);
-            const size_t c_nChunk = SizeSource / c_SizeChunk;
+            //const size_t c_nChunk = SizeSource / c_SizeChunk;
             _Assert(SizeSource % c_SizeChunk == 0);
 
             const __m128i c_code = _mm_set1_epi8((char)code);
@@ -545,7 +545,7 @@ namespace UTIL{
         BOOL gFN_MemoryCompare_Default(const void* pSource, size_t SizeSource, unsigned char code)
         {
             _Assert(pSource && SizeSource);
-            const size_t c_mask_one_under_16BYTE = 16-1;
+            //const size_t c_mask_one_under_16BYTE = 16-1;
             const size_t c_mask_zero_under_16BYTE = ~((size_t)16-1);
 
             const BYTE* pF = (const BYTE*)pSource;
@@ -588,7 +588,7 @@ namespace UTIL{
         BOOL gFN_MemoryCompare_SIMD_SSE2(const void* pSource, size_t SizeSource, unsigned char code)
         {
             _Assert(pSource && SizeSource);
-            const size_t c_mask_one_under_16BYTE = 16-1;
+            //const size_t c_mask_one_under_16BYTE = 16-1;
             const size_t c_mask_zero_under_16BYTE = ~((size_t)16-1);
 
             const BYTE* pF = (const BYTE*)pSource;
